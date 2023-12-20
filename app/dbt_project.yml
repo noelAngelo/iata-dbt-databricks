@@ -40,6 +40,10 @@ models:
       +materialized: table
     audit:
       +enabled: false
+
+on-run-end:
+  - "{% if target.name == 'prod' %}{{ dbt_artifacts.upload_results(results) }}{% endif %}"
+  
 # dbt-cloud: 
 #     project-id: 326562
 
@@ -49,3 +53,4 @@ vars:
 dispatch:
   - macro_namespace: dbt
     search_order: ['dbt_project_evaluator', 'dbt']
+
