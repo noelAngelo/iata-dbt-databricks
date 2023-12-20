@@ -1,3 +1,8 @@
+{{
+  config(
+    enabled=false
+    )
+}}
 select origin_airport_name,
 window, count(*) as no_same_day_origin_flights
 from
