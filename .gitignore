@@ -1,0 +1,5 @@
+.databricks/
+.venv/
+.vscode/
+logs/
+package-lock.yml
